@@ -12,6 +12,8 @@
 		93FAD6F61F0D6B4400107529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93FAD6F41F0D6B4400107529 /* Main.storyboard */; };
 		93FAD6F81F0D6B4400107529 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93FAD6F71F0D6B4400107529 /* Assets.xcassets */; };
 		93FAD6FB1F0D6B4400107529 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93FAD6F91F0D6B4400107529 /* LaunchScreen.storyboard */; };
+		93FAD7061F0D6E5200107529 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FAD7051F0D6E5200107529 /* Alamofire.framework */; };
+		93FAD7081F0D7FFE00107529 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FAD7071F0D7FFE00107529 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		93FAD6F71F0D6B4400107529 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93FAD6FA1F0D6B4400107529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93FAD6FC1F0D6B4400107529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93FAD7051F0D6E5200107529 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		93FAD7071F0D7FFE00107529 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93FAD7081F0D7FFE00107529 /* SwiftyJSON.framework in Frameworks */,
+				93FAD7061F0D6E5200107529 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +60,8 @@
 		93FAD6EF1F0D6B4400107529 /* colorfulJSON */ = {
 			isa = PBXGroup;
 			children = (
+				93FAD7071F0D7FFE00107529 /* SwiftyJSON.framework */,
+				93FAD7051F0D6E5200107529 /* Alamofire.framework */,
 				93FAD6F01F0D6B4400107529 /* AppDelegate.swift */,
 				93FAD6F21F0D6B4400107529 /* ViewController.swift */,
 				93FAD6F41F0D6B4400107529 /* Main.storyboard */,
@@ -74,6 +82,7 @@
 				93FAD6E91F0D6B4400107529 /* Sources */,
 				93FAD6EA1F0D6B4400107529 /* Frameworks */,
 				93FAD6EB1F0D6B4400107529 /* Resources */,
+				93FAD7021F0D6D0C00107529 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -131,6 +140,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93FAD7021F0D6D0C00107529 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93FAD6E91F0D6B4400107529 /* Sources */ = {
@@ -262,6 +289,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2THR9E8H8D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/colorfulJSON",
+				);
 				INFOPLIST_FILE = colorfulJSON/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = swiftso.colorfulJSON;
@@ -275,6 +306,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2THR9E8H8D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/colorfulJSON",
+				);
 				INFOPLIST_FILE = colorfulJSON/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = swiftso.colorfulJSON;
@@ -302,6 +337,7 @@
 				93FAD7011F0D6B4400107529 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
